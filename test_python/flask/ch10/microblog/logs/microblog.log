@@ -1,0 +1,164 @@
+2023-08-06 19:37:04,657 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 42, in index
+    prev_url = url_for('index',page = post.prev_num) if posts.has_prev else None
+                                      ^^^^
+UnboundLocalError: cannot access local variable 'post' where it is not associated with a value
+2023-08-06 19:40:27,097 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-07 09:23:39,453 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 09:26:12,505 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 09:30:07,972 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 09:32:22,458 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 09:33:23,492 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 09:57:58,760 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 12:00:51,168 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 12:18:59,168 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 12:20:12,935 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 12:21:13,188 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 13:08:00,279 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 13:10:50,938 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 13:11:23,310 ERROR: Exception on /reset_password_request [POST] [in /Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/routes.py", line 188, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/email.py", line 13, in send_password_reset_email
+    token = user.get_reset_password_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'get_reset_password_token'
+2023-08-07 13:21:14,745 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 13:21:31,252 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 13:21:58,046 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 13:22:43,668 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 14:45:20,339 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 16:26:12,611 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 16:26:30,970 ERROR: Exception on /reset_password_request [POST] [in /Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/routes.py", line 188, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/email.py", line 13, in send_password_reset_email
+    token = user.get_reset_password_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/models.py", line 74, in get_reset_password_token
+    {'reset_password': self.id, 'exp': time() + expires_in},
+                                       ^^^^
+NameError: name 'time' is not defined
+2023-08-07 16:27:37,820 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 16:27:46,066 ERROR: Exception on /reset_password_request [POST] [in /Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/routes.py", line 188, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/email.py", line 13, in send_password_reset_email
+    token = user.get_reset_password_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/models.py", line 76, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+                                                 ^^^^^^
+AttributeError: 'str' object has no attribute 'decode'
+2023-08-07 16:30:08,703 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch10/microblog/app/__init__.py:41]
+2023-08-07 16:30:24,493 ERROR: Exception on /reset_password_request [POST] [in /Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask_mail.py", line 188, in send
+    self.host.sendmail(sanitize_address(envelope_from or message.sender),
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 872, in sendmail
+    self.ehlo_or_helo_if_needed()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 611, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+                   ^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 451, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 378, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 365, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/routes.py", line 188, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/email.py", line 14, in send_password_reset_email
+    send_email('[Microblog] Reset Your Password',
+  File "/Users/dc/test_stuff/flask/ch10/microblog/app/email.py", line 10, in send_email
+    mail.send(msg)
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/Users/dc/test_stuff/flask/ch10/microblog/.ch10/lib/python3.11/site-packages/flask_mail.py", line 152, in __exit__
+    self.host.quit()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 1004, in quit
+    res = self.docmd("quit")
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 431, in docmd
+    self.putcmd(cmd, args)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 378, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/smtplib.py", line 365, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first

@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+src/awstest.egg-info/PKG-INFO
+src/awstest.egg-info/SOURCES.txt
+src/awstest.egg-info/dependency_links.txt
+src/awstest.egg-info/top_level.txt

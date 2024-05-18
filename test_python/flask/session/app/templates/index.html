@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {%if session['mode']=="dark"%}
+    <style>
+      body{
+        background-color: darkgrey;
+        color:white;
+      }
+    </style>
+  {%endif%}
+</head>
+<body>
+  Session
+  <a href="{{ url_for('set_background',mode='light')}}">Light Mode</a>
+  <a href="{{ url_for('set_background',mode='dark')}}">Dark Mode</a>
+  
+</body>
+</html>

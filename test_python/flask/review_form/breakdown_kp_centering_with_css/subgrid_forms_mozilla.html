@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.field {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-column-gap: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Sub-Grids */
+
+.field {
+  display: grid;
+  grid-column: span 2;
+  grid-template-columns: inherit;
+  grid-template-columns: subgrid;
+  grid-column-gap: inherit;
+}
+
+/* Subgrid */
+
+.field {
+}
+
+/* Styles */
+body {
+  align-content: center;
+  background-color: var(--neon-blue);
+  display: grid;
+  grid-gap: 1em;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-blue);
+  }
+}
+
+h1 {
+  grid-column: 1 / -1;
+}
+
+form {
+  width: 80vw;
+  max-width: 30em;
+}
+  </style>
+</head>
+<body>
+  <h1>Subgrid Forms</h1>
+
+<form action="">
+  <label for="name" class="field">
+    <span class="label-text">Full Name</span>
+    <input type="text" id="name">
+  </label>
+  <label for="email" class="field">
+    <span class="label-text">Email</span>
+    <input type="email" id="email">
+  </label>
+  <label for="message" class="field">
+    <span class="label-text">Longer</span>
+    <textarea name="" id="message"></textarea>
+  </label>
+  <button>send!</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<head>
+{%if title%}
+<title>{{title}} jinja instered title</title>
+{%else%}
+<title>no title</title>
+{%endif%}
+</head>
+<body>
+<h4>hello {{user.username}}</h4>
+<p>double braces to evaluate vars</p>
+<p>jinja2 conditional logic is evaluated on the server in contrast to client JS which
+is evaluated in the browser. fkask sends to the browser rendered html with the
+jinja2 removed. all pre browser javascript. jinja2 replaced by JS both on
+server and client. inefficient grammar </p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+up to ch4. add mods here. 
+db insert works in webservice >flask run
+db insert doesnt work in python CLI. app.app_context() errror. WOrked in other revisions? 
+something wrong with setup. maybe FLASK_APP not set. 
+this is the min you need to run 
+flask db init
+flask db migrate
+flask db upgrade
+
+then check test.db file and verify 
+cd instance
+sqlite3 test.db
+.tables
+.schema user
+insert into user(id,username,email, age) values(1, "bob", "bob@example.com", 10);
+select * from user;
+1|bob|bob@example.com|10
+
+
+
+

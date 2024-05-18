@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if title%}
+  <title>{{title}} title exists</title>
+  {%else%}
+  <title>title not found</title>
+  {%endif%} 
+</head>
+<body>
+  <p>endif in Jinja2 is old syntax from perl and bash code</p>
+  {{posts}}
+  {%for p in posts%}
+  <div>{{p.author}} says {{p.body}}</div>
+  {%endfor%}
+</body>
+</html>

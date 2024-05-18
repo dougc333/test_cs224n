@@ -1,0 +1,213 @@
+2023-08-05 20:52:20,153 ERROR: Exception on /login [POST] [in /Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/routes.py", line 45, in login
+    user = User.query.filter_by(username=form.username.data).first()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2747, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2141, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+           ^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('a', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-08-05 20:52:43,837 ERROR: Exception on /register [POST] [in /Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/routes.py", line 73, in register
+    if form.validate_on_submit():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask_wtf/form.py", line 86, in validate_on_submit
+    return self.is_submitted() and self.validate(extra_validators=extra_validators)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/wtforms/form.py", line 329, in validate
+    return super().validate(extra)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/wtforms/form.py", line 146, in validate
+    if not field.validate(self, extra):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/wtforms/fields/core.py", line 242, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/wtforms/fields/core.py", line 262, in _run_validation_chain
+    validator(form, self)
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/forms.py", line 29, in validate_username
+    user = User.query.filter_by(username=username.data).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2747, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2141, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+           ^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('bob', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-08-05 20:53:40,566 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 20:53:46,608 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 20:54:39,655 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 20:56:05,406 ERROR: Exception on /user/z [GET] [in /Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/routes.py", line 87, in user
+    user = User.query.filter_by(username=username).first_or_404()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask_sqlalchemy/query.py", line 46, in first_or_404
+    abort(404, description=description)
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/werkzeug/exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'),404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/templates/404.html", line 1, in top-level template code
+    {%extends base.html%}
+  File "/Users/dc/test_stuff/flask/ch8/microblog/.ch8venv/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'base' is undefined
+2023-08-06 09:00:08,879 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]

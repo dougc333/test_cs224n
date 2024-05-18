@@ -1,0 +1,174 @@
+2023-07-30 10:36:50,787 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch7/microblog/app/__init__.py:39]
+2023-07-30 10:40:03,191 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch7/microblog/app/__init__.py:39]
+2023-07-30 10:40:18,179 ERROR: Exception on /edit_profile [POST] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch7/microblog/app/routes.py", line 127, in edit_profile
+    db.session.commit()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1920, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1236, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1211, in _prepare_impl
+    self.session.flush()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4163, in flush
+    self._flush(objects)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4298, in _flush
+    with util.safe_reraise():
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4259, in _flush
+    flush_context.execute()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 909, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+           ^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('a', 'aaaaaaaa', 2)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-07-30 12:12:01,186 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:15:37,400 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:15:47,225 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:20:59,347 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:21:37,284 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:21:53,398 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:22:34,808 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:22:59,594 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 12:23:10,456 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 15:45:05,782 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 16:11:16,232 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 16:11:19,239 ERROR: Exception on /favicon.ico [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/routing/map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'),404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch8/microblog/app/templates/404.html", line 1, in top-level template code
+    {%extends base.html%}
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'base' is undefined
+2023-07-30 16:37:22,468 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 16:37:42,598 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-30 16:39:01,952 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:12:35,165 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:13:23,771 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:15:38,783 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:32:40,956 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:33:26,268 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:34:44,297 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:37:48,304 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:40:12,300 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:40:24,725 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-07-31 00:43:20,552 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 11:32:53,614 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 11:35:46,696 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 11:38:31,602 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 14:55:05,893 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 14:56:07,935 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 14:59:33,950 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 15:01:50,149 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 15:03:49,569 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 15:05:24,148 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 15:08:35,332 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]
+2023-08-05 20:52:08,382 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch8/microblog/app/__init__.py:39]

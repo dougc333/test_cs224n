@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+snakesay/__main__.py
+snakesay/cli.py
+snakesay/snake.py
+snakesay/snakeapi.py
+snakesay.egg-info/PKG-INFO
+snakesay.egg-info/SOURCES.txt
+snakesay.egg-info/dependency_links.txt
+snakesay.egg-info/top_level.txt

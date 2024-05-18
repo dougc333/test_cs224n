@@ -1,0 +1,222 @@
+2023-08-06 09:07:25,140 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 45, in index
+    return render_template('index.html', title="Home",form=form, posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 1, in top-level template code
+    {%extends 'base.html' %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/base.html", line 38, in top-level template code
+    {%block content %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 23, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2023-08-06 09:07:26,580 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 45, in index
+    return render_template('index.html', title="Home",form=form, posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 1, in top-level template code
+    {%extends 'base.html' %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/base.html", line 38, in top-level template code
+    {%block content %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 23, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2023-08-06 09:18:54,719 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 09:19:31,479 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 45, in index
+    return render_template('index.html', title="Home",form=form, posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 1, in top-level template code
+    {%extends 'base.html' %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/base.html", line 38, in top-level template code
+    {%block content %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 23, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2023-08-06 09:19:42,390 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 45, in index
+    return render_template('index.html', title="Home",form=form, posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 1, in top-level template code
+    {%extends 'base.html' %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/base.html", line 38, in top-level template code
+    {%block content %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 23, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2023-08-06 09:19:43,639 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 45, in index
+    return render_template('index.html', title="Home",form=form, posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 1, in top-level template code
+    {%extends 'base.html' %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/base.html", line 38, in top-level template code
+    {%block content %}
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/index.html", line 23, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2023-08-06 09:29:22,765 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]

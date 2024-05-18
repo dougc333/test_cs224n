@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     @import url("https://use.typekit.net/koe0wht.css");
+    *, *::before, *::after {
+  box-sizing: border-box;
+  }
+
+  :root {
+  --fw-1: 300;
+  --fw-2: 700;
+  --fw-3: 900;
+  
+  --fs-1: 1.125rem;
+  --fs-2: 1.25rem;
+  --fs-3: 2rem;
+  --fs-small: .75rem;
+  
+  --clr-1: #fff;
+  --clr-2: #255996;
+  --clr-3: #1b3049;
+  --clr-4: #171f29;
+  --clr-5: #1fd030;
+  
+  --clr-dark: rgba(0,0,0,.25);
+  --clr-body: rgba(255,255,255,.8);
+}
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-family: motiva-sans, sans-serif; 
+      background-color: var(--clr-4);
+      color: var(--clr-body);
+      font-size: var(--fs-1);
+      font-weight: var(--fw-1);
+      line-height: 1.6;
+    }
+    p{
+      margin: 0 0 .15em;
+    }
+
+    .front {
+  order: 2;
+  background-color: var(--clr-2);
+  background-image: linear-gradient(to bottom right, rgba(0,0,0,0), var(--clr-dark));
+  padding: 3rem;
+  /* grid-row: 1 / -1;
+  grid-column: 2 / 3; */
+}
+
+.back {
+  order: 1;
+  background-color: var(--clr-3);
+ /*  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  padding: 3rem; */
+}
+
+
+  form{
+    display: grid;
+    width: 960px;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 35%  1fr 3em;
+  /* position: relative;
+      border: 1px solid black; */
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <div class="front">
+      <h1 class="title">Login Form</h1>
+      <p>Login Form</p>
+      <p>Login to the account</p>
+      <p>html from notes on input and label hteml tags</p>
+      <p>label value in for has to equal id in matching input element</p>
+      <p>Use p*3 tab to get 3 paragraphs</p>
+      <p>when styling text beware of margin collapse</p>
+      <p>style the margin bottom when adjustin distamce between lines</p>
+      <form action="POST" >
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"/>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+        <label for="password2">Retype Password</label>
+        <input type="password2" id="password2" name="password2"/>
+        
+        <p class="fineprint">
+          <input type="checkbox" id="agreement" name="agreement">
+          <label for="agreement">I am old</label>
+        </p>
+        
+        <button type="Submit">Submit</button>
+        <a href="#" class="fineprint"></a>
+      </form>
+    </div>
+    <div class="back">
+    <h2 class="subheading">Why Join Steam</h2>
+      <ul class="list list--unstyled">
+        <li>More CSS Styling Tips</li>
+        <li>There are 3 columns in the steam form</li>
+        <li>Chat with people</li>
+        <li>Play games</li>
+        <li>Schedule stuff</li>
+        <li>Get auto updates</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+
+

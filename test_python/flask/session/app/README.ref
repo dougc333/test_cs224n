@@ -1,0 +1,12 @@
+1) session variable is in index.html without having to pass variable through render_template fn. 
+2) convention of set_background vs. set-background for url https://developers.google.com/search/docs/crawling-indexing/url-structure 
+google url naming says use set-background or hyphen in url name. Python route names have hyphen. To make this convention work 
+name the function with an underscore. app.route('set-foo)
+                                      def set_foo():
+
+        
+        
+
+3) better to know how to implement middleware to convert url parameters
+https://stackoverflow.com/questions/51691730/flask-middleware-for-specific-route
+4) look at dev tools storage to session set on client 

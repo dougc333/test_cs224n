@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      height: 80vh;
+      display:grid;
+      border:1px solid green;
+      grid: auto / 1fr minmax(250px, 500px) 1fr;
+    }
+    .center{
+      border:1px solid salmon;
+      grid-column:2/3;
+    }
+
+    h2{
+      border:1px solid purple;
+      grid-column:1/2;
+      writing-mode: vertical-lr;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>div container=green, div center=salmon, h2=purple</p>
+    <h2>Title Placeholder</h2>
+    <div class="center">
+      <p>Hi am I centered? </p>
+    </div>
+  </div>
+</body>
+</html>

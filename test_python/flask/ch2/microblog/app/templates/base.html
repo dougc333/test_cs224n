@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%if title%}
+  <title>{{title}}</title>
+  {%else%}
+  <title>No title </title>
+  {%endif%}
+</head>
+<body>
+  <div>Microblog index2 test inheritance:<a href="/index2"></a></div>
+  <div>Microblog index:<a href="/index"></a></div>
+  <div>Microblog loops:<a href="/loops"></a></div>
+  <div>Microblog test conditional:<a href="/notitle"></a></div>
+  <div>Microblog test title:<a href="/title"></a></div>
+  
+  {%block content%}
+  {%endblock%}
+</body>
+</html>

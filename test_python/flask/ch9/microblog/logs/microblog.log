@@ -1,0 +1,22 @@
+2023-08-06 19:37:04,657 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 42, in index
+    prev_url = url_for('index',page = post.prev_num) if posts.has_prev else None
+                                      ^^^^
+UnboundLocalError: cannot access local variable 'post' where it is not associated with a value
+2023-08-06 19:40:27,097 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]

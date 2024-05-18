@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .body{
+      min-height:100vh;
+    } */
+    .container{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      border:1px solid green;
+      min-height:100vh;
+      /* min-height:100vh  get overflow so set min-height 0 and use body to get 100vh*/ 
+      gap:1em; 
+      flex-direction:row; /*default */
+    }
+    .center{
+      border:1px solid salmon;
+    }
+    p{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="container" class="container">
+    <div class="center">
+      <p>hi am I centered?</p>
+      <p>second am I centered? </p> 
+    </div>
+    <div class="center">
+      <p>hi am I centered2?</p>
+      <p>second am I centered2? </p> 
+    </div>
+  </div>
+</body>
+</html>

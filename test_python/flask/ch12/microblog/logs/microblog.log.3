@@ -1,0 +1,227 @@
+2023-08-06 18:46:58,576 ERROR: Exception on / [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 17, in before_request
+    if current_user.is_authenticated:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())  # type: ignore
+                    ^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/models.py", line 9, in load_user
+    return User.query.get(int(id))
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in get
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/util/deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 3684, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2246, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2141, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+           ^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.id = ?]
+[parameters: (2,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-08-06 18:47:18,569 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:47:28,024 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:47:31,847 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:47:57,217 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:48:05,012 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:48:32,257 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:48:35,319 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:48:41,800 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 18:48:47,459 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 19:19:38,783 ERROR: Exception on /favicon.ico [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/routing/map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'),404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/404.html", line 1, in top-level template code
+    {%extends base.html%}
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'base' is undefined
+2023-08-06 19:19:46,440 ERROR: Exception on /favicon.ico [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/routing/map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'),404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/templates/404.html", line 1, in top-level template code
+    {%extends base.html%}
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'base' is undefined
+2023-08-06 19:30:39,943 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 19:36:49,305 INFO: microblog startup [in /Users/dc/test_stuff/flask/ch9/microblog/app/__init__.py:39]
+2023-08-06 19:36:58,861 ERROR: Exception on /index [GET] [in /Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/.pyenv/versions/3.11.3/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dc/test_stuff/flask/ch9/microblog/app/routes.py", line 42, in index
+    prev_url = url_for('index',page = post.prev_num) if posts.has_prev else None
+                                      ^^^^
+UnboundLocalError: cannot access local variable 'post' where it is not associated with a value

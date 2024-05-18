@@ -1,0 +1,8 @@
+1) the fn hello is called a view fn because it presents to view for the routes
+2) the imprt routes is at the end to allow app to be defined first. 
+3) perl and bash like syntax, end loop with endfor, end if statement with endif
+4) assumes /templates folder for render_template files
+5) base.html for template inheritance
+
+
+

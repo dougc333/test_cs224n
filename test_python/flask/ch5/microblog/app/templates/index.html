@@ -1,0 +1,8 @@
+{%extends 'base.html'%}
+
+{%block content%}
+  <h2>User:{{current_user.username}}</h2>
+  {%for p in posts%}
+  <p>Post Author:{{p.author}} Post Body: {{p.body}}</p>
+  {%endfor%}
+{%endblock%}

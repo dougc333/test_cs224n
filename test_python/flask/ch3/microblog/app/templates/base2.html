@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%if title%}
+  <title>{{title}}</title>
+  {%else%}
+  <title>There is no title given</title>
+  {%endif%}
+</head>
+<body>
+  <h3>Hello logged in user:{{loggedin_user.username}}</h3>
+  {%for p in posts%}
+  <div>{{p.author}} says:{{p.body}}</div>
+  {%endfor%}
+  {%block content%} 
+  <div></div>
+  {%endblock%}
+</body>
+</html>

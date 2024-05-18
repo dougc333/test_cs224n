@@ -1,0 +1,10 @@
+{
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.suggest.showStatusBar": true,
+    "editor.suggestSelection": "recentlyUsed",
+    "emmet.useInlineCompletions": false,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
+}

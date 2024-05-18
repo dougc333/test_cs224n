@@ -1,0 +1,32 @@
+#how to test transactions
+
+
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+import pytest
+
+
+@pytest.fixture(scope="session")
+def engine():
+    return create_engine("postgresql://localhost:5432/postgres")
+
+@pytest.fixture(scope="session")
+def tables(engine):
+    BaseModel.metadata.create_all(engine)
+    yield
+    BaseModel.metadata.drop_all(engine)
+
+@pytest.fixture
+def dbsession(engine,tables):
+    connection = engine.connect()
+    transaction = connection.begin()
+    session = Session(bind=connection)
+    yield session
+    session.close()
+    transaction.rollback()
+    connection.close()
+
+
+#funcdtion scopt https://stackoverflow.com/questions/23325669/writting-py-test-for-sqlalchemy-app
+
